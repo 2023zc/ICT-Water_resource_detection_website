@@ -181,6 +181,6 @@ const resetForm = (formEl: FormInstance | undefined) => {
 
 
 
-<style lang="scss">
-@import "../assests/login.css";
+<style lang="scss" scoped>
+@import "@/pages/login/assests/login.css";
 </style>

@@ -107,12 +107,12 @@ const rules = reactive<FormRules<typeof ruleForm>>({
 
 
 
-//TODO: 登录功能实现
+//TODO: 登录功能实现,向主组件传递用户名,密码,UID
 const loginForm = (formEl: FormInstance | undefined) => {
   if (!formEl) return
     formEl.validate((valid) => {
       if(valid){
-        emits('login');
+        emits('login',ruleForm.username,ruleForm.password,ruleForm.uniqueId);
         return true;
       }
       else{

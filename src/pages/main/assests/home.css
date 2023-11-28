@@ -3,9 +3,6 @@
     padding: 0;
 }
 
-li {
-    list-style: none;
-}
 
 .layout {
     display: flex;
@@ -16,14 +13,14 @@ li {
     margin-top: 5px;
 }
 
-.el-container .el-aside {
-    background-color: #545c64;
-}
 
 .el-container .el-header{
     background-color: #2d2df1;
 }
 
+.el-container .el-main{
+    background-color: #FFFFFF;
+}
 
 .el-container .el-aside .el-menu {
     width: 200px;

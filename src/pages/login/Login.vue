@@ -5,13 +5,14 @@
         <div class="infos">
           <h2>欢迎来到水资源登陆界面</h2>
           <!--        一定要是src开始-->
-          <el-image src="src/pages/login/assests/猫猫.gif"></el-image>
+          <img src="@/pages/login/assests/cat.gif" alt="">
           <p>更健康,更便捷</p>
         </div>
       </el-col>
       <el-col :span="1">
         <el-divider direction="vertical" border-style="solid" class="divider"/>
       </el-col>
+
       <login v-if="isRegisted" @login="checklogin">
         <el-button @click="toRegister">没有账号,去注册</el-button>
       </login>
@@ -22,12 +23,11 @@
 
 
 
-
 </template>
 
 <script>
-import register from './components/register.vue'
-import login from './components/login.vue'
+import register from '@/pages/login/components/register.vue'
+import login from '@/pages/login/components/login.vue'
 
 export default {
   data() {
@@ -42,10 +42,9 @@ export default {
       this.isLogined=!this.isLogined;
     },
 
-    checklogin(){
-      window.location.href= 'main.html'
+    checklogin(username,password,uniqueId){
+      this.$emit('login',username,password,uniqueId)
     },
-
 
   },
   components: {register, login}
@@ -53,7 +52,7 @@ export default {
 </script>
 
 
-<style lang="scss">
-@import "./assests/login.css";
+<style lang="scss" scoped>
+@import "@/pages/login/assests/login.css";
 
 </style>
